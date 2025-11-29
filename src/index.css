@@ -1,0 +1,151 @@
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb; /* primary */
+  --accent-2: #7c3aed; /* secondary purple */
+  --success: #10b981;
+  --danger: #ef4444;
+  --glass: rgba(255,255,255,0.6);
+  --shadow-1: 0 6px 18px rgba(37,99,235,0.08);
+  --shadow-2: 0 8px 30px rgba(16,24,40,0.06);
+  --radius: 12px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+
+html,body,#root{
+  height:100%;
+}
+
+body{
+  margin:0;
+  background:
+    linear-gradient(180deg, rgba(124,58,237,0.03) 0%, rgba(37,99,235,0.02) 50%, rgba(99,102,241,0.01) 100%),
+    var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+}
+
+/* container */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+/* header */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo{
+  width:48px;height:48px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:700;box-shadow:var(--shadow-1);
+}
+.title{
+  font-size:20px;font-weight:700;
+}
+.subtitle{
+  font-size:13px;color:var(--muted);
+}
+
+/* layout */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:18px;
+  align-items:start;
+}
+
+/* card */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow-2);
+  border:1px solid rgba(15,23,42,0.03);
+}
+
+/* form */
+.form h2{margin:0 0 10px 0;font-size:18px}
+.field{margin-bottom:12px}
+label{display:block;font-size:13px;margin-bottom:6px;color:#111827;font-weight:600}
+input[type="text"], textarea, select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;border:1px solid #e6e9ef;background:linear-gradient(#fff,#fbfdff);
+  outline:none;font-size:14px;color:#111827;
+  transition:box-shadow .12s, border-color .12s;
+}
+input:focus, textarea:focus, select:focus{
+  box-shadow:0 6px 18px rgba(37,99,235,0.08);
+  border-color:var(--accent);
+}
+textarea{min-height:110px;resize:vertical;padding-top:10px}
+
+/* small helpers */
+.row{display:flex;gap:12px}
+.col{flex:1}
+.small{font-size:12px;color:var(--muted)}
+.badge{
+  display:inline-block;padding:6px 10px;border-radius:999px;font-weight:600;font-size:12px;
+  background:linear-gradient(90deg, rgba(37,99,235,0.08), rgba(124,58,237,0.06));
+  color:var(--accent);
+}
+
+/* actions */
+.actions{display:flex;gap:10px;align-items:center}
+.btn{
+  padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 22px rgba(37,99,235,0.12);
+}
+.btn-ghost{background:transparent;border:1px solid #e6e9ef;color:var(--accent);font-weight:700}
+
+/* status messages */
+.status{font-size:13px;margin-left:8px;color:var(--muted)}
+.status.success{color:var(--success)}
+.status.error{color:var(--danger)}
+
+/* Latest suggestion */
+.latest .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.latest .meta .name{font-weight:700}
+.latest .message{margin-top:12px;color:#111827;line-height:1.45}
+.urgency{
+  padding:6px 10px;border-radius:8px;font-weight:700;font-size:12px;
+  display:inline-block;
+}
+.urgency.low{background:#eef2ff;color:#3730a3}
+.urgency.medium{background:#fff7ed;color:#b45309}
+.urgency.high{background:#ffeef0;color:#dc2626}
+
+/* empty state */
+.empty{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px;color:var(--muted);gap:12px;
+  text-align:center;
+}
+
+/* footer small */
+.footer-small{margin-top:14px;font-size:13px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:980px){
+  .grid{grid-template-columns:1fr; }
+  .logo{width:42px;height:42px}
+  body{padding:18px}
+}
