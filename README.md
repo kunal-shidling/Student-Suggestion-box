@@ -1,4 +1,4 @@
-# Student Suggestion Box
+# Student Suggestion Box by original owner
 
 A modern, real-time web application built with React and Supabase that allows students to submit suggestions and feedback. The application features a clean interface for submitting suggestions with urgency levels and displays the latest submission in real-time.
 
